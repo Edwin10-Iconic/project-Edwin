@@ -1,61 +1,32 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-struct Record {
-    int id;
-
-};
-
-
-void swap(struct Record *a, struct Record *b) {
-    struct Record temp = *a;
-    *a = *b;
-    *b = temp;
-}
-
-
-void bubble_sort(struct Record arr[], int n) {
-    for (int i = 0; i < n - 1; i++) {
-        for (int j = 0; j < n - i - 1; j++) {
-            if (arr[j].id > arr[j + 1].id) {
-                swap(&arr[j], &arr[j + 1]);
-            }
-        }
-    }
-}
-
 int main() {
 
-    struct Record records[] = {
-        {5},
-        {2},
-        {7},
-        {1},
-        {9}
-
-    };
-
-    int n = sizeof(records) / sizeof(records[0]);
+    int a = 10;
+    float b = 3.14;
+    char c = 'A';
 
 
-    printf("Before sorting:\n");
-    for (int i = 0; i < n; i++) {
-        printf("%d ", records[i].id);
-    }
-    printf("\n");
+    float result1 = (float)a;
+    printf("Int to float: %f\n", result1);
 
 
-    bubble_sort(records, n);
+    int result2 = (int)b;
+    printf("Float to int: %d\n", result2);
 
 
-    printf("After sorting:\n");
-    for (int i = 0; i < n; i++) {
-        printf("%d ", records[i].id);
-    }
-    printf("\n");
+    int result3 = (int)c;
+    printf("Char to int: %d\n", result3);
+
+
+    int x = 10, y = 5, z = 3;
+    float f1 = (float)(x + y) / z;
+    float f2 = (float)x + y / z;
+    printf("Result 1: %f\n", f1);
+    printf("Result 2: %f\n", f2);
 
     return 0;
 }
-
 
 
